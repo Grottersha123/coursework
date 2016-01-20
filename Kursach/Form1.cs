@@ -152,6 +152,37 @@ namespace Kursach
 
         }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (Roman_Parse(textBox3.Text) == 0)
+            {
+                MessageBox.Show("Введите Римское число");
+                textBox3.Text = "";
+
+            }
+            else
+            {
+                textBox3.Text = Roman_Parse(textBox3.Text).ToString();
+            }
+
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int a = Convert.ToInt32(textBox3.Text);
+                textBox3.Text = Arabic_Parse(a);
+            }
+            catch
+            {
+                textBox3.Text = "";
+                MessageBox.Show("Введите Арабское число");
+            }
+
+        }
+
     
     }
 }
